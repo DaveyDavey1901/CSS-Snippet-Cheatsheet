@@ -1,0 +1,94 @@
+/* styling everything on the page from top to bottom in order they appear*/
+header {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.4rem;
+  text-align: center;
+}
+
+header h1.main-title {
+  padding: 1rem 1.2rem;
+  font-size: 4.4rem;
+}
+
+main {
+  width: 85%;
+  margin: 2rem auto;
+}
+
+footer {
+  border: 1px solid var(--muddy);
+  margin: 2rem auto;
+  text-align: center;
+}
+
+/* flexbox container main grid with flexbox */
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 1rem;
+}
+.snippet-column {
+  flex: 1 0 100%;
+  transition: flex-basis 0.3s linear;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.snippet-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100%;
+  padding: 2rem;
+  color: var(--bright-yellow);
+  border: 2px solid var(--offwhite);
+  border-radius: 12px;
+  transition: all 0.5s ease-in-out;
+}
+.snippet-card .snippet-text {
+  color: var(--offwhite);
+  text-align: center;
+}
+.snippet-card .snippet-header {
+  position: relative;
+  text-align: center;
+  margin: -4.5rem 0 1.5rem 0;
+  padding: 0.5rem 1rem;
+  color: var(--bright-yellow);
+  background-color: var(--muddy);
+  border: 2px solid var(--offwhite);
+  border-radius: 12px;
+  transition: all 0.5s ease-in-out; /*time for glow to reach maximum */
+}
+
+.snippet-card .snippet-code {
+  flex-grow: 1;
+}
+
+.snippet-card pre {
+  display: flex;
+  align-items: center;
+  white-space: pre-wrap;
+  overflow: auto;
+  tab-size: 4;
+  padding: 1.2rem 2.4rem;
+  color: var(--offwhite);
+  border-radius: 12px;
+  background: linear-gradient(to top left, #21c792, #7cda6e);
+}
+
+.snippet-card pre:active {
+  user-select: all;
+}
+
+.snippet-card:hover,
+.snippet-card:hover .snippet-header {
+  box-shadow: 0px 0px 3px 4px var(--bright-yellow);
+}
+
+.snippet-card:hover .snippet-header {
+  transform: rotatex(180deg);
+  color: var(--muddy);
+}
